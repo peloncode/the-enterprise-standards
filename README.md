@@ -1,50 +1,64 @@
-# Welcome to your Expo app 👋
+# The Enterprise Standards: Task Manager (Offline-First) 🚀
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-443E38?style=for-the-badge&logo=react&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
-## Get started
+## 📱 App Preview
 
-1. Install dependencies
+<div align="center">
+  <img src="./screenshots/capture1.jpeg" width="300" alt="Home Screen" />
+  <img src="./screenshots/capture2.jpeg" width="300" alt="Task Form" />
+  <p><i>Interfaz Dark Premium con arquitectura robusta y validación en tiempo real.</i></p>
+</div>
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 📋 Objetivo del Proyecto
 
-   ```bash
-   npx expo start
-   ```
+"The Enterprise Standards" es una aplicación de gestión de tareas de alto rendimiento diseñada bajo la filosofía **Offline-First**. El objetivo principal es demostrar la implementación de una arquitectura escalable, persistencia de datos relacionales en dispositivos móviles y la gestión de estados globales complejos con sincronización reactiva.
 
-In the output, you'll find options to open the app in a
+## 🏗️ Arquitectura: Clean Architecture
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Para garantizar la mantenibilidad y el desacoplamiento, el proyecto se estructuró en tres capas principales:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Domain Layer:** Contiene las entidades (`Task.ts`) y la lógica pura de negocio. Es independiente de frameworks o librerías.
+2.  **Data Layer:** Implementa el **Repository Pattern**. Gestiona la persistencia física mediante `expo-sqlite`.
+3.  **Presentation Layer:** \* **State Management:** Zustand (Single Source of Truth).
+    - **UI Components:** Dark Mode Pro, `React Hook Form` y `Zod`.
 
-## Get a fresh project
+## 📡 El "Wow Factor": Estrategia Offline-First
 
-When you're ready, run:
+La aplicación implementa un sistema de sincronización inteligente:
 
-```bash
-npm run reset-project
-```
+- **Persistencia Local Inmediata:** CRUD directo en SQLite.
+- **Detección de Conectividad:** Monitorización vía `@react-native-community/netinfo`.
+- **Sync Engine:** Reconciliación automática de tareas `pending` al recuperar conexión.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🧪 Calidad y Testing
 
-## Learn more
+Se implementó una suite de pruebas unitarias robusta:
 
-To learn more about developing your project with Expo, look at the following resources:
+- **Store Testing:** Validación de flujos de estado en Zustand.
+- **Validation Testing:** Integridad de datos con Zod.
+- **Mocking Avanzado:** Aislamiento total de módulos nativos.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🛠️ Stack Tecnológico
 
-## Join the community
+- **Core:** React Native (Expo SDK 54) + TypeScript.
+- **State:** Zustand.
+- **Database:** Expo SQLite.
+- **Forms & Validation:** React Hook Form + Zod.
+- **Testing:** Jest + React Native Testing Library.
 
-Join our community of developers creating universal apps.
+## 🚀 Instalación y Uso
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Clonar el repositorio.
+2. Instalar dependencias: `npm install`
+3. Ejecutar tests: `npm test`
+4. Iniciar app: `npx expo start`
+
+---
+
+**Desarrollado bajo estándares de ingeniería de software empresarial.**
