@@ -22,14 +22,12 @@ export const useTaskStore = create<TaskState>((set, get) => ({
     const tasks = await TaskRepositoryImpl.getAll();
     set({ tasks });
 
-    // Configurar el escucha de red
     NetInfo.addEventListener((state) => {
       const wasOffline = !get().isOnline;
       const isNowOnline = state.isConnected ?? false;
 
       set({ isOnline: isNowOnline });
 
-      // Si pasamos de offline a online, sincronizamos
       if (wasOffline && isNowOnline) {
         get().syncPendingTasks();
       }
@@ -79,7 +77,7 @@ export const useTaskStore = create<TaskState>((set, get) => ({
 
     console.log(`📡 Sincronizando ${pending.length} tareas...`);
 
-    // Simulamos latencia de red
+    // latencia de red
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const syncedTasks = get().tasks.map((t) => ({
@@ -87,7 +85,6 @@ export const useTaskStore = create<TaskState>((set, get) => ({
       syncStatus: "synced" as const,
     }));
 
-    // Actualizamos SQLite con el nuevo status
     for (const task of syncedTasks) {
       await TaskRepositoryImpl.save(task);
     }

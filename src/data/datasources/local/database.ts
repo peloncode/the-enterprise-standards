@@ -5,7 +5,6 @@ const DATABASE_NAME = "tasks_db";
 export const initDatabase = async () => {
   const db = await SQLite.openDatabaseAsync(DATABASE_NAME);
 
-  // Creamos la tabla si no existe
   await db.execAsync(`
     PRAGMA journal_mode = WAL;
     CREATE TABLE IF NOT EXISTS tasks (

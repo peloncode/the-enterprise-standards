@@ -1,5 +1,3 @@
-// src/__tests__/setup.ts
-
 jest.mock("expo-sqlite", () => ({
   openDatabaseAsync: jest.fn().mockResolvedValue({
     execAsync: jest.fn(),

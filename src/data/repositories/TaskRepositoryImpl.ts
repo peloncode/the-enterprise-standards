@@ -41,7 +41,7 @@ export const TaskRepositoryImpl = {
   async delete(id: string): Promise<void> {
     try {
       const db = await initDatabase();
-      // Usamos runAsync con manejo de errores para asegurar el borrado
+
       await db.runAsync("DELETE FROM tasks WHERE id = ?", [id]);
       console.log(`✅ Tarea ${id} eliminada de SQLite`);
     } catch (error) {
@@ -49,7 +49,6 @@ export const TaskRepositoryImpl = {
     }
   },
 
-  // FUNCIÓN EXTRA: Úsala solo si quieres borrar TODO y empezar de cero
   async deleteAllData(): Promise<void> {
     const db = await initDatabase();
     await db.runAsync("DELETE FROM tasks");

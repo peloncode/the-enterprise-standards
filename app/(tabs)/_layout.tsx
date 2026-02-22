@@ -25,11 +25,6 @@ export default function TabLayout() {
           ),
         }}
       />
-
-      {/* Importante: Al borrar 'explore.tsx', Expo Router ya no lo mostrará,
-         pero si te aparece un error de "Missing Route", asegúrate de que
-         no haya ningún archivo extra en la carpeta app/(tabs)/ excepto index.tsx y _layout.tsx
-      */}
     </Tabs>
   );
 }

@@ -1,11 +1,9 @@
 import { useTaskStore } from "../useTaskStore";
 
-// Limpiamos los mocks antes de empezar
 jest.useFakeTimers();
 
 describe("TaskStore Logic", () => {
   it("debería añadir una nueva tarea al estado", async () => {
-    // Accedemos directamente a las acciones del store
     const { addTask } = useTaskStore.getState();
 
     await addTask("Tarea de prueba", "Esta es una descripción");
