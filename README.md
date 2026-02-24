@@ -28,7 +28,7 @@ Para garantizar la mantenibilidad y el desacoplamiento, el proyecto se estructur
 3.  **Presentation Layer:** \* **State Management:** Zustand (Single Source of Truth).
     - **UI Components:** Dark Mode Pro, `React Hook Form` y `Zod`.
 
-## 📡 El "Wow Factor": Estrategia Offline-First
+## 📡 Estrategia Offline-First
 
 La aplicación implementa un sistema de sincronización inteligente:
 
